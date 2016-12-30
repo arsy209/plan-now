@@ -5,7 +5,7 @@
 
 body{
   margin:0;
-  font-family: 'Nunito';
+  font-family: 'Helvetica';
   background-color: lightblue;
   color: #424242;
 }
@@ -109,7 +109,6 @@ textarea{
 }
 
 .large-container{
-
   max-width: 1000px;
   margin: 60px auto;
   min-height:10px;
@@ -122,9 +121,11 @@ textarea{
 
  width: 250px;
  box-shadow: 0 6px 6px rgba(0,0,0,.12);
+ background-color: lightgrey;
  input[type="submit"]{
   width: 80px;
   margin-bottom: 15px;
+  background-color: green;
  }
 }
 

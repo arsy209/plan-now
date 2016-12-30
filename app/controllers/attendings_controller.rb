@@ -1,8 +1,7 @@
 class AttendingsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def create
-    #verify user has not responded to this event before
     @event = Event.find_by(id: params[:event])
     unless user_responded?(@event)
       @attending = current_user.attendings.build
@@ -12,7 +11,7 @@ class AttendingsController < ApplicationController
     end
     redirect_to @event
   end
-  
+
   def update
     @event = Event.find_by(id: params[:event])
     if user_responded?(@event)
@@ -22,7 +21,4 @@ class AttendingsController < ApplicationController
     end
     redirect_to @event
   end
-  
-  
-    
 end
