@@ -1,1 +1,6 @@
-<h1> all users </h1>
+<div class="container">
+  <h1> Registered Users </h1>
+  <%@users.each do |user|%>
+    <p><%= link_to "#{user.name}", user_path(user.id)%></p>
+  <%end%>
+</div>
