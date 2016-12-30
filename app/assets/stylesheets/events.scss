@@ -1,0 +1,274 @@
+// Place all the styles related to the Events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body{
+  margin:0;
+  font-family: 'Nunito';
+  background-color: lightblue;
+  color: #424242;
+}
+
+header{
+  width: 100vw;
+  top:0;
+  background-color: lightpink;
+  height: 65px;
+  font-size: 28px;
+  padding-top:20px;
+  padding-left: 30px;
+}
+
+nav{
+  float:right;
+  margin-top: -5px;
+  margin-right: 50px;
+  font-size: 16px;
+
+  li{
+    display:inline;
+    margin-left: 10px;
+  }
+}
+
+
+
+a{
+  text-decoration:none;
+  color:#673AB7;
+}
+
+a:hover{
+  color: #9575CD;
+}
+
+input{
+  font-family:'Nunito';
+  font-size: 16px;
+  font-weight: 300;
+  width: 230px;
+  padding:5px;
+  background-color:#fff;
+  border:0;
+  border:1px solid #eee;
+  margin-top:10px;
+  border-radius:5px;
+  box-shadow: inset 0 1px 3px  rgba(0,0,0,.05);
+  &:focus{
+    outline:none;
+    border: 1px solid #ddd;
+  }
+
+  &[type="checkbox"]{
+    width:15px;
+
+  }
+
+  &[type="submit"]{
+    border:0;
+    background-color: #FF5252;
+    color:#fff;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 7px;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+textarea{
+  resize:none;
+  font-family:'Nunito';
+  font-size: 16px;
+  font-weight: 300;
+  padding:5px;
+  background-color:#fff;
+  border:0;
+  border:1px solid #eee;
+  margin-top:10px;
+  border-radius:5px;
+  box-shadow: inset 0 1px 3px  rgba(0,0,0,.05);
+  &:focus{
+    outline:none;
+    border: 1px solid #ddd;
+  }
+}
+
+.container{
+  background-color: #fff;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  padding-top: 5px;
+
+}
+
+.large-container{
+
+  max-width: 1000px;
+  margin: 60px auto;
+  min-height:10px;
+  clear: left;
+  padding-top: 20px;
+  border-top: 2px solid #fff;
+}
+
+.form{
+
+ width: 250px;
+ box-shadow: 0 6px 6px rgba(0,0,0,.12);
+ input[type="submit"]{
+  width: 80px;
+  margin-bottom: 15px;
+ }
+}
+
+
+.large-form{
+  width: 310px;
+  input{
+    width: 300px;
+  }
+  input[type="radio"]{
+    width: 15px;
+  }
+
+  textarea{
+    width: 300px;
+    height: 250px;
+  }
+}
+#error_explanation{
+  width: 225px;
+  color: #F44336;
+  background-color: #FFEBEE;
+  padding:10px;
+  border: 1px solid #F44336;
+  h2{
+    font-size: 18px;
+  }
+}
+
+.event{
+  display:inline;
+  float:left;
+  width: 230px;
+  height: 300px;
+  background-color: #fff;
+  margin:10px;
+  margin-bottom: 30px;
+  box-shadow: 6px 6px rgba(0,0,0,.25);
+}
+
+.event:hover{
+  box-shadow: 3px 3px rgba(0,0,0,.25);
+}
+.date{
+  width:210px;
+  padding-bottom: 10px;
+  margin-left:10px;
+  border-bottom:1px solid#eee;
+  text-align:center;
+  font-weight:700;
+  color: #424242;
+}
+
+.day{
+  font-size: 80px;
+}
+
+.details{
+
+  width: 210px;
+  margin: 10px;
+  font-size:20px;
+}
+.main{
+  max-width: 600px;
+  min-height: 300px;
+  padding: 20px;
+  margin:70px auto;
+  background-color: #fff;
+  box-shadow: 30px 30px rgba(0,0,0,.4);
+
+  h1{
+    margin-bottom: 10px;
+  }
+
+  i{
+  font-size: 28px;
+  margin-right: 10px;
+  }
+}
+
+.info{
+  margin-top: 10px;
+  line-height: 2.5;
+}
+
+i{
+  font-size: 30px;
+}
+
+.small{
+  font-size: 13px;
+}
+.light{
+
+  font-weight:300;
+}
+
+.notice{
+  max-width: 400px;
+  color: #00C853;
+  border: 2px solid #00C853;
+  background-color:#B9F6CA;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.alert{
+  max-width: 400px;
+  color: #D50000;
+  border: 2px solid #D50000;
+  background-color: #FF8A80;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.display{
+  max-width:550px;
+
+
+  margin-top: 10px;
+  h3{
+    margin:0;
+  }
+
+  li{
+    display:inline;
+    margin-right: 50px;
+    font-size:18px;
+
+  }
+
+  line-height:3;
+}
+
+.user-display{
+  width: 45%;
+  padding-top:10px;
+  height: 40px;
+  font-size: 18px;
+  margin-bottom:10px;
+
+}
+
+.clear{
+  clear:both;
+}
