@@ -3,12 +3,37 @@
   <head>
     <title>PlanNow</title>
     <%= csrf_meta_tags %>
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+  <header>
+    <%= link_to "Plan-Now", events_path %>
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Home", user_path(current_user)%></li>
+        <li><%= link_to "Create New Event", new_event_path %></li>
+        <li>
+
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
+        </li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path %> </li>
+          <li><%= link_to "Sign In", new_user_session_path %> </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% elsif flash[:alert] %>
+  <div class="alert"><%= flash[:alert] %></div>
+<% end %>
     <%= yield %>
   </body>
 </html>
