@@ -54,7 +54,6 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-
   private
 
     def event_params
@@ -70,6 +69,4 @@ class EventsController < ApplicationController
       ids = yeses.map { |yes| yes.attendee_id }
       attendees = User.where(id: ids)
     end
-
-
 end

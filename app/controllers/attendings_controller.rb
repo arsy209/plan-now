@@ -21,7 +21,4 @@ class AttendingsController < ApplicationController
     end
     redirect_to @event
   end
-
-
-
 end
