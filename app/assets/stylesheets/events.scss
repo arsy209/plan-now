@@ -2,10 +2,13 @@
   white-space: pre-line;
 }
 
+.all-user {
+  background-image: url('/multi.jpg') ;
+
+}
 nav {
   background-image: url('/blur.jpg') ;
   color: black;
-
 }
 
 body{
@@ -20,11 +23,11 @@ body{
 
 a{
   text-decoration:none;
-  color:#673AB7;
+  color:black;
 }
 
 a:hover{
-  color: #9575CD;
+  color:grey;
 }
 
 input{
