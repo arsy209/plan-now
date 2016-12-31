@@ -1,38 +1,17 @@
-// Place all the styles related to the Events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.spacing{
+  white-space: pre-line;
+}
 
+nav {
+  background-color: #33FF99  ;
+}
 
 body{
   margin:0;
   font-family: 'Helvetica';
-  background-color: lightblue;
+  background-color: #DAF7A6  ;
   color: #424242;
 }
-
-header{
-  width: 100vw;
-  top:0;
-  background-color: lightpink;
-  height: 65px;
-  font-size: 28px;
-  padding-top:20px;
-  padding-left: 30px;
-}
-
-nav{
-  float:right;
-  margin-top: -5px;
-  margin-right: 50px;
-  font-size: 16px;
-
-  li{
-    display:inline;
-    margin-left: 10px;
-  }
-}
-
-
 
 a{
   text-decoration:none;
@@ -119,7 +98,7 @@ textarea{
 
 .form{
 
- width: 250px;
+ width: 300px;
  box-shadow: 0 6px 6px rgba(0,0,0,.12);
  background-color: lightgrey;
  input[type="submit"]{
@@ -131,7 +110,7 @@ textarea{
 
 
 .large-form{
-  width: 310px;
+  width: 350px;
   input{
     width: 300px;
   }
@@ -195,7 +174,6 @@ textarea{
   padding: 20px;
   margin:70px auto;
   background-color: #fff;
-  box-shadow: 30px 30px rgba(0,0,0,.4);
 
   h1{
     margin-bottom: 10px;
