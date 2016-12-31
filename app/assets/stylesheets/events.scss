@@ -3,14 +3,19 @@
 }
 
 nav {
-  background-color: #33FF99  ;
+  background-image: url('/blur.jpg') ;
+  color: black;
+
 }
 
 body{
   margin:0;
   font-family: 'Helvetica';
-  background-color: #DAF7A6  ;
-  color: #424242;
+  background-image: url('/wrinkle.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+
 }
 
 a{
@@ -100,7 +105,8 @@ textarea{
 
  width: 300px;
  box-shadow: 0 6px 6px rgba(0,0,0,.12);
- background-color: lightgrey;
+   background-image: url('/blur.jpg') ;
+   color: black;
  input[type="submit"]{
   width: 80px;
   margin-bottom: 15px;
