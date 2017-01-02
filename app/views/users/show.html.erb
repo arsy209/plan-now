@@ -1,18 +1,26 @@
 <div class="large-container">
+  <div class="container">
   <h1> <%= @user.name %> </h1>
+    <%= image_tag @user.avatar.url(:thumb)%>
+
   <strong><p> Member since: <%= time_ago_in_words @user.created_at %></p></strong>
   <strong><p> Contact Information: <%= @user.email %></p></strong>
   <% if current_user == @user %>
     <%= link_to 'Edit Profile',edit_user_registration_path, class: "btn btn-primary btn-xs"%>
   <%end%>
+    </div>
 </div>
 <% if @user == current_user %>
   <div class="large-container">
   <h2> Invitations:</h2>
+  <% if @invites == nil %>
+    no invites
+    <%else%>
     <% @invites.each do |event| %>
       <%= render partial: 'events/event', locals: { event: event } %>
     <% end %>
   </div>
+<% end %>
 <% end %>
 <div class="large-container">
   <h2>Created events by <%= @user.name %>:</h2>

@@ -25,6 +25,11 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :change_user_icon %>
+    <%= f.file_field :avatar, as: :file %>
+  </div>
 
   <div class="field">
     <%= f.label :current_password %> <p>(we need your current password to confirm your changes)</p>
