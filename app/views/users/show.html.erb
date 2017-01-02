@@ -9,10 +9,14 @@
 <% if @user == current_user %>
   <div class="large-container">
   <h2> Invitations:</h2>
+  <% if @invites == nil %>
+    no invites
+    <%else%>
     <% @invites.each do |event| %>
       <%= render partial: 'events/event', locals: { event: event } %>
     <% end %>
   </div>
+<% end %>
 <% end %>
 <div class="large-container">
   <h2>Created events by <%= @user.name %>:</h2>

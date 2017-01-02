@@ -6,6 +6,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @invites = user_invitations(current_user).sort_by(&:date)
+    if @invites == nil
+      "no events"
+    else
+      @invites
+    end
   end
 
   def edit
