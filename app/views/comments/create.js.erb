@@ -1,12 +1,9 @@
 $("#comments-<%= @comment.event_id %>")
   .prepend("<div class='new'></div>");
-  
+
 $('.new').html("<%= escape_javascript(render partial:'events/comment', locals: { comment: @comment}) %>");
-   
+
 $('.new').fadeIn(1000);
 
 $('textarea').val('');
 $('form').reset();
-    
-
-  
