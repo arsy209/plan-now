@@ -34,20 +34,19 @@ module InvitationsHelper
     n = []
     users.each do |user|
       unless invitees(event).include?(user) || event.attendees.include?(user)
-        n << user
+      n << user
       end
     end
     n
   end
 
   def not_responded(event)
-    n = []
-    invitees(event).each do |user|
-      unless event.attendees.include?(user)
-        n << user
-      end
+  n = []
+  invitees(event).each do |user|
+    unless event.attendees.include?(user)
+    n << user
     end
+  end
     n
   end
-
 end
