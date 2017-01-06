@@ -1,5 +1,4 @@
 <div class="main">
-
   <h1> <%= @event.title %> </h1>
   <% if current_user == @event.user %>
     <span class="light">
@@ -7,7 +6,6 @@
       <%= link_to "Delete Event", event_path(@event), class: "btn btn-danger btn-sm",method: :delete %>
     </span>
   <% end %>
-
   <div class="info">
     <i class="material-icons">event</i>
      <span>
@@ -16,19 +14,14 @@
       , at <%= @event.start.strftime("%I:%M %p") %>
      <% end %>
    </span><br>
-
     <i class="material-icons">place</i>
     <span><%= @event.location %></span>
   </div>
-
-
   <h3>Description</h3>
   <p class="light">
     <%= @event.description %>
-
   </p>
 </div>
-
 <div class="main comments">
 <% if @event.date >= Time.now %>
 <% if @responded %>
@@ -36,33 +29,17 @@
   <% other = @going ? "No" : "Yes" %>
   Your RSVP:
   <button class="active">
-    <%= link_to rsvp,
-      { controller: "attendings", action: "update", event: @event.id, rsvp: @going },
-      method: :patch %>
-  </button>
+    <%= link_to rsvp,{ controller: "attendings", action: "update", event: @event.id, rsvp: @going },method: :patch %></button>
   Change to
   <button>
-    <%= link_to other,
-    { controller: "attendings", action: "update", event: @event.id, rsvp: !@going },
-    method: :patch %>
-  </button>
-
+    <%= link_to other,{ controller: "attendings", action: "update", event: @event.id, rsvp: !@going },method: :patch %></button>
 <% else %>
  Are you going?
+  <button><%= link_to "Yes", { controller: "attendings", action: "create", event: @event.id, rsvp: true },method: :post%></button>
   <button>
-    <%= link_to "Yes", { controller: "attendings", action: "create", event: @event.id, rsvp: true },
-      method: :post%>
-  </button>
-
-  <button>
-    <%= link_to "No",
-      { controller: "attendings", action: "create", event: @event.id, rsvp: false },
-        method: :post%>
-  </button>
+    <%= link_to "No",{ controller: "attendings", action: "create", event: @event.id, rsvp: false },method: :post%></button>
 <% end %>
-
 <% end %>
-
   <div class="display">
     <h3>Attending (<span id="attend-<%=@event.id %>"><%= @attendees.count%></span>)</h3>
     <div class="users">
@@ -71,13 +48,8 @@
          <%= link_to user.name, user_path(user) %>
        </div>
     <% end %>
-
-
     </div>
-
   </div>
-
-
   <div class="display">
     <h3> Invited (<span id="attend-<%=@event.id %>"><%= @invitees.count%></span>) </h3>
     <%if @event.user == current_user %>
@@ -90,10 +62,8 @@
     <% end %>
   </div>
 </div>
-
 <div class="main comments">
   <h2> Comments </h2>
-
   <%= form_for @comment, url: comments_path, remote: true do |f| %>
     <%= f.text_area :content %>
     <%= f.hidden_field :event_id, value: @event.id %>

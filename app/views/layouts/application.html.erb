@@ -4,43 +4,39 @@
     <title>PlanNow</title>
     <%= csrf_meta_tags %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body>
-    <nav>
+  <nav>
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/events">Plan-Now</a>
-
     </div>
     <ul class="nav navbar-nav">
       <li><%= link_to "All Users", users_path %></li>
-        <li><%= link_to "New Event", new_event_path %></li>
+      <li><%= link_to "New Event", new_event_path %></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
+    <% if user_signed_in? %>
       <li><%= link_to "#{current_user.name}", user_path(current_user)%></li>
-      <li>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete  %>
-      </li>
-      <% else %>
-        <li><%= link_to "Sign Up", new_user_registration_path %> </li>
-        <li><%= link_to "Sign In", new_user_session_path %> </li>
+      <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete  %></li>
+    <% else %>
+      <li><%= link_to "Sign Up", new_user_registration_path %> </li>
+      <li><%= link_to "Sign In", new_user_session_path %> </li>
     <% end %>
     </ul>
   </div>
-</nav>
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% elsif flash[:alert] %>
-  <div class="alert"><%= flash[:alert] %></div>
-<% end %>
+  </nav>
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% elsif flash[:alert] %>
+    <div class="alert"><%= flash[:alert] %></div>
+  <% end %>
     <%= yield %>
   </body>
 </html>
