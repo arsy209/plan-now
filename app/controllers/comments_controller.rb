@@ -13,12 +13,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # def update
-  #   @comment = Comment.find_by(id: params[:id])
-  #   @comment.update_attributes(comment_params)
-  #   redirect_to events_path
-  # end
-  #
   def destroy
   @comment = Comment.find_by(id: params[:id])
     if @comment.destroy
