@@ -1,8 +1,6 @@
 // Place all the styles related to the Attendings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 button{
   font-family:'Helvetica';
   border:0;
@@ -15,11 +13,9 @@ button{
   width: 45px;
   a{
     color: #fff;
-
     &:hover{
       color:white;
     }
-
     &focus{
       outline:none;
     }
@@ -27,7 +23,6 @@ button{
 }
 
 .active{
-
   background-color: #fff;
   border: 2px solid #FF5252;
   margin-right: 20px;
@@ -38,6 +33,4 @@ button{
       color: #FF5252;
     }
   }
-
-
 }
