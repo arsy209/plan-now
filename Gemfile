@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'will_paginate', '~>3.0.6'
 
-gem "paperclip", "~> 5.0.0"
+# gem "paperclip", "~> 5.0.0"
 
 gem 'devise'
 # Use jquery as the JavaScript library
