@@ -106,12 +106,14 @@ textarea{
 .form{
  width: 300px;
  box-shadow: 0 6px 6px rgba(0,0,0,.12);
-   background-image: url('/blur.jpg') ;
+  //  background-image: url('/blur.jpg') ;
    color: black;
+   background-color: #E18181  ;
  input[type="submit"]{
   width: 80px;
   margin-bottom: 15px;
-  background-color: green;
+  background-color: #900C3F ;
+
  }
 }
 
