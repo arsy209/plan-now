@@ -24,6 +24,7 @@
 </div>
 <div class="main comments">
 <% if @event.date >= Time.now %>
+<% if user_signed_in? %>
 <% if @responded %>
   <% rsvp = @going ? "Yes" : "No" %>
   <% other = @going ? "No" : "Yes" %>
@@ -40,6 +41,7 @@
     <%= link_to "No",{ controller: "attendings", action: "create", event: @event.id, rsvp: false },method: :post%></button>
 <% end %>
 <% end %>
+<% end %>
   <div class="display">
     <h3>Attending (<span id="attend-<%=@event.id %>"><%= @attendees.count%></span>)</h3>
     <div class="users">
@@ -50,7 +52,7 @@
     <% end %>
     </div>
   </div>
-  <div class="display">
+  <!-- <div class="display">
     <h3> Invited (<span id="attend-<%=@event.id %>"><%= @invitees.count%></span>) </h3>
     <%if @event.user == current_user %>
     <%= link_to "invite others", new_event_invitation_path(@event)%>
@@ -60,7 +62,7 @@
         <%= link_to invitee.name, user_path(invitee) %>
       </div>
     <% end %>
-  </div>
+  </div> -->
 </div>
 <div class="main comments">
     <% if user_signed_in? %>
