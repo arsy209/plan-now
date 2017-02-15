@@ -16,10 +16,7 @@ class CommentsController < ApplicationController
   def destroy
   @comment = Comment.find_by(id: params[:id])
     if @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to events_path, notice: 'Comment was successfully deleted.' }
-      format.json { head :no_content }
-     end
+      redirect_to events_path(@event), notice: 'Comment was successfully deleted.'
    end
   end
 
