@@ -43,7 +43,7 @@
 <% end %>
 <% end %>
   <div class="display">
-    <h3>Attending (<span id="attend-<%=@event.id %>"><%= @attendees.count%></span>)</h3>
+    <h3>Total Guests Attending: (<span id="attend-<%=@event.id %>"><%= @attendees.count%></span>)</h3>
     <div class="users">
     <% @attendees.each do |user| %>
        <div class="user-display">
@@ -65,8 +65,8 @@
   </div> -->
 </div>
 <div class="main comments">
-    <% if user_signed_in? %>
   <h2> Comments </h2>
+  <% if user_signed_in? %>
   <%= form_for @comment, url: comments_path, remote: true do |f| %>
     <%= f.text_area :content %>
     <%= f.hidden_field :event_id, value: @event.id %>
