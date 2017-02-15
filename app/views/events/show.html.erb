@@ -63,11 +63,13 @@
   </div>
 </div>
 <div class="main comments">
+    <% if user_signed_in? %>
   <h2> Comments </h2>
   <%= form_for @comment, url: comments_path, remote: true do |f| %>
     <%= f.text_area :content %>
     <%= f.hidden_field :event_id, value: @event.id %>
     <%= f.submit "Post" %>
+  <% end %>
   <% end %>
   <div id="comments-<%= @event.id %>">
     <% @event.comments.order('created_at DESC').each do |comment| %>
