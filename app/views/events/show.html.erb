@@ -1,5 +1,6 @@
 <div class="main">
   <h1> <%= @event.title %> </h1>
+  <h4><strong>Host:<%= @event.user.name %></strong></h4>
   <% if current_user == @event.user %>
     <span class="light">
       <%= link_to "Edit Event", edit_event_path(@event), class: "btn btn-primary btn-sm" %>
@@ -24,10 +25,14 @@
 </div>
 <div class="main comments">
 <% if @event.date >= Time.now %>
+<% if user_signed_in? %>
+<% if current_user == @event.user %>
+<span><%= link_to "INVITE OTHER USERS", new_event_invitation_path(@event),class: "btn btn-primary btn-sm"%></span>
+<% end %>
 <% if @responded %>
   <% rsvp = @going ? "Yes" : "No" %>
   <% other = @going ? "No" : "Yes" %>
-  Your RSVP:
+  <strong>Your RSVP:</strong>
   <button class="active">
     <%= link_to rsvp,{ controller: "attendings", action: "update", event: @event.id, rsvp: @going },method: :patch %></button>
   Change to
@@ -40,8 +45,9 @@
     <%= link_to "No",{ controller: "attendings", action: "create", event: @event.id, rsvp: false },method: :post%></button>
 <% end %>
 <% end %>
+<% end %>
   <div class="display">
-    <h3>Attending (<span id="attend-<%=@event.id %>"><%= @attendees.count%></span>)</h3>
+    <h3>Total Guests Attending: (<span id="attend-<%=@event.id %>"><%= @attendees.count%></span>)</h3>
     <div class="users">
     <% @attendees.each do |user| %>
        <div class="user-display">
@@ -50,24 +56,15 @@
     <% end %>
     </div>
   </div>
-  <div class="display">
-    <h3> Invited (<span id="attend-<%=@event.id %>"><%= @invitees.count%></span>) </h3>
-    <%if @event.user == current_user %>
-    <%= link_to "invite others", new_event_invitation_path(@event)%>
-    <% end %>
-    <% @invitees.each do |invitee| %>
-      <div class="user-display">
-        <%= link_to invitee.name, user_path(invitee) %>
-      </div>
-    <% end %>
-  </div>
 </div>
 <div class="main comments">
   <h2> Comments </h2>
+  <% if user_signed_in? %>
   <%= form_for @comment, url: comments_path, remote: true do |f| %>
     <%= f.text_area :content %>
     <%= f.hidden_field :event_id, value: @event.id %>
     <%= f.submit "Post" %>
+  <% end %>
   <% end %>
   <div id="comments-<%= @event.id %>">
     <% @event.comments.order('created_at DESC').each do |comment| %>
