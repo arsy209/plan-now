@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       @invites
     end
   end
-  
+
   def edit
     @user = User.find(params[:id])
   end
