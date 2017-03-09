@@ -2,24 +2,11 @@
   white-space: pre-line;
 }
 
-.all-user {
-  // background-image: url('/multi.jpg') ;
-
-}
-nav {
-  // background-image: url('/blur.jpg') ;
-  color: white;
-}
-
 body{
   margin:0;
   font-family: 'Helvetica';
-  // background-image: url('/wrinkle.jpg') ;
-  // background-repeat: no-repeat;
-  // background-size: cover;
   color: white;
   background-color: #943030  ;
-
 }
 
 a{
@@ -83,17 +70,6 @@ textarea{
   }
 }
 
-// .container{
-//   // background-image: url('/multi.jpg') ;
-//   max-width: 500px;
-//   margin: 0 auto;
-//   margin-top: 20px;
-//   padding: 20px;
-//   padding-top: 5px;
-//   color: white;
-//
-// }
-
 .large-container{
   max-width: 1000px;
   margin: 60px auto;
@@ -106,14 +82,12 @@ textarea{
 .form{
  width: 300px;
  box-shadow: 0 6px 6px rgba(0,0,0,.12);
-  //  background-image: url('/blur.jpg') ;
-   color: black;
-   background-color: #E18181  ;
+ color: black;
+ background-color: #E18181  ;
  input[type="submit"]{
   width: 80px;
   margin-bottom: 15px;
   background-color: #900C3F ;
-
  }
 }
 
@@ -167,16 +141,16 @@ textarea{
   color: black;
 }
 
-.day{
+.day {
   font-size: 80px;
 }
 
-.details{
+.details {
   width: 210px;
   margin: 10px;
   font-size:20px;
 }
-.main{
+.main {
   max-width: 600px;
   min-height: 300px;
   padding: 20px;
@@ -184,22 +158,22 @@ textarea{
   background-color: #fff;
   color: black;
 
-  h1{
-    margin-bottom: 10px;
-  }
+h1 {
+  margin-bottom: 10px;
+}
 
-  i{
+  i {
   font-size: 28px;
   margin-right: 10px;
   }
 }
 
-.info{
+.info {
   margin-top: 10px;
   line-height: 2.5;
 }
 
-i{
+i {
   font-size: 30px;
 }
 
